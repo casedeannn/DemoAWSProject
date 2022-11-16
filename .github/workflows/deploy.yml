@@ -34,7 +34,7 @@ jobs:
       - name: chmod
         run: chmod -R +x ./.github
 
-      - name: Build and Package Maven
+      - name: Build and Package Gradle
         id: package
         working-directory: ${{ env.applicationfolder }}
         run: $GITHUB_WORKSPACE/.github/scripts/build.sh
