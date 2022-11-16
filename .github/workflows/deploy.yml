@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
 
 env:
-  applicationfolder: src
+  applicationfolder: /
   AWS_REGION: us-east-2
   S3BUCKET: teststack-webappdeploymentbucket-lze2yjuqngj5
 
