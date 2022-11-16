@@ -1,7 +1,8 @@
 name: Build and Deploy
 
 on:
-  workflow_dispatch: {}
+  push:
+    branches: [master]
 
 env:
   applicationfolder: src
@@ -33,6 +34,9 @@ jobs:
 
       - name: chmod
         run: chmod -R +x ./.github
+
+      - name: chmod
+        run: chmod -R +x ./gradlew
 
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
