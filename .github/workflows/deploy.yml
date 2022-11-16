@@ -34,10 +34,13 @@ jobs:
       - name: chmod
         run: chmod -R +x ./.github
 
-      - name: Build and Package Gradle
-        id: package
-        working-directory: ${{ env.applicationfolder }}
-        run: $GITHUB_WORKSPACE/.github/scripts/build.sh
+      - name: Validate Gradle wrapper
+          uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
+
+      - name: Build with Gradle
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+        with:
+          arguments: build
 
       - name: Upload Artifact to s3
         working-directory: build/libs
