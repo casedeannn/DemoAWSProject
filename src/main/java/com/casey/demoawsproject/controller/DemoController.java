@@ -14,6 +14,6 @@ public class DemoController {
 
     @GetMapping("/test")
     public String hello2() {
-        return "world Hello";
+        return "world Hello ";
     }
 }
